@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.7)
+project(pac99 Fortran)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+add_executable(${PROJECT_NAME} src/pac99.f)
+
+include(GNUInstallDirs)
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}Targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${BINDIR}
+)
+file(COPY share/new.groups DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pac99)
