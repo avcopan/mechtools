@@ -274,7 +274,7 @@ void read_inputfile ();
 void read_Bmat_Cmat ();
 void calc_Amat ();
 void intcoord_hessian(int step, double **FC, double *grad);
-void determine_top_atoms ();
+void determine_top_atoms (int step);
 void read_VaG_mueff ();
 void allocation( int dim );
 void convert_coordinates_to_bohr(int step);
