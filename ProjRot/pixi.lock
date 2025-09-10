@@ -1,0 +1,152 @@
+version: 6
+environments:
+  default:
+    channels:
+    - url: https://prefix.dev/conda-forge/
+    packages:
+      linux-64:
+      - conda: https://prefix.dev/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
+      - conda: https://prefix.dev/conda-forge/linux-64/_openmp_mutex-4.5-2_gnu.tar.bz2
+      - conda: https://prefix.dev/conda-forge/linux-64/libgcc-15.1.0-h767d61c_5.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/libgomp-15.1.0-h767d61c_5.conda
+      - conda: .
+        build: hb0f4dca_0
+      osx-64:
+      - conda: .
+        build: h0dc7051_0
+      osx-arm64:
+      - conda: .
+        build: h60d57d3_0
+      win-64:
+      - conda: https://prefix.dev/conda-forge/win-64/ucrt-10.0.26100.0-h57928b3_0.conda
+      - conda: https://prefix.dev/conda-forge/win-64/vc-14.3-h41ae7f8_31.conda
+      - conda: https://prefix.dev/conda-forge/win-64/vc14_runtime-14.44.35208-h818238b_31.conda
+      - conda: https://prefix.dev/conda-forge/win-64/vcomp14-14.44.35208-h818238b_31.conda
+      - conda: .
+        build: h9490d1a_0
+packages:
+- conda: https://prefix.dev/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
+  sha256: fe51de6107f9edc7aa4f786a70f4a883943bc9d39b3bb7307c04c41410990726
+  md5: d7c89558ba9fa0495403155b64376d81
+  license: None
+  size: 2562
+  timestamp: 1578324546067
+- conda: https://prefix.dev/conda-forge/linux-64/_openmp_mutex-4.5-2_gnu.tar.bz2
+  build_number: 16
+  sha256: fbe2c5e56a653bebb982eda4876a9178aedfc2b545f25d0ce9c4c0b508253d22
+  md5: 73aaf86a425cc6e73fcf236a5a46396d
+  depends:
+  - _libgcc_mutex 0.1 conda_forge
+  - libgomp >=7.5.0
+  constrains:
+  - openmp_impl 9999
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 23621
+  timestamp: 1650670423406
+- conda: https://prefix.dev/conda-forge/linux-64/libgcc-15.1.0-h767d61c_5.conda
+  sha256: 0caed73aac3966bfbf5710e06c728a24c6c138605121a3dacb2e03440e8baa6a
+  md5: 264fbfba7fb20acf3b29cde153e345ce
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - _openmp_mutex >=4.5
+  constrains:
+  - libgomp 15.1.0 h767d61c_5
+  - libgcc-ng ==15.1.0=*_5
+  license: GPL-3.0-only WITH GCC-exception-3.1
+  license_family: GPL
+  size: 824191
+  timestamp: 1757042543820
+- conda: https://prefix.dev/conda-forge/linux-64/libgomp-15.1.0-h767d61c_5.conda
+  sha256: 125051d51a8c04694d0830f6343af78b556dd88cc249dfec5a97703ebfb1832d
+  md5: dcd5ff1940cd38f6df777cac86819d60
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  license: GPL-3.0-only WITH GCC-exception-3.1
+  license_family: GPL
+  size: 447215
+  timestamp: 1757042483384
+- conda: .
+  name: projrot
+  version: 0.1.0
+  build: h0dc7051_0
+  subdir: osx-64
+  input:
+    hash: 5c34b29c95ff60edf9e19dd835bc16c8e1b266a85fd86d6fe327a9ac92c0f3c5
+    globs:
+    - recipe.yaml
+- conda: .
+  name: projrot
+  version: 0.1.0
+  build: h60d57d3_0
+  subdir: osx-arm64
+  input:
+    hash: 5c34b29c95ff60edf9e19dd835bc16c8e1b266a85fd86d6fe327a9ac92c0f3c5
+    globs:
+    - recipe.yaml
+- conda: .
+  name: projrot
+  version: 0.1.0
+  build: h9490d1a_0
+  subdir: win-64
+  depends:
+  - vc >=14.1,<15
+  - vc14_runtime >=14.16.27033
+  input:
+    hash: 5c34b29c95ff60edf9e19dd835bc16c8e1b266a85fd86d6fe327a9ac92c0f3c5
+    globs:
+    - recipe.yaml
+- conda: .
+  name: projrot
+  version: 0.1.0
+  build: hb0f4dca_0
+  subdir: linux-64
+  depends:
+  - libgcc >=15
+  input:
+    hash: 5c34b29c95ff60edf9e19dd835bc16c8e1b266a85fd86d6fe327a9ac92c0f3c5
+    globs:
+    - recipe.yaml
+- conda: https://prefix.dev/conda-forge/win-64/ucrt-10.0.26100.0-h57928b3_0.conda
+  sha256: 3005729dce6f3d3f5ec91dfc49fc75a0095f9cd23bab49efb899657297ac91a5
+  md5: 71b24316859acd00bdb8b38f5e2ce328
+  constrains:
+  - vc14_runtime >=14.29.30037
+  - vs2015_runtime >=14.29.30037
+  license: LicenseRef-MicrosoftWindowsSDK10
+  size: 694692
+  timestamp: 1756385147981
+- conda: https://prefix.dev/conda-forge/win-64/vc-14.3-h41ae7f8_31.conda
+  sha256: cb357591d069a1e6cb74199a8a43a7e3611f72a6caed9faa49dbb3d7a0a98e0b
+  md5: 28f4ca1e0337d0f27afb8602663c5723
+  depends:
+  - vc14_runtime >=14.44.35208
+  track_features:
+  - vc14
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 18249
+  timestamp: 1753739241465
+- conda: https://prefix.dev/conda-forge/win-64/vc14_runtime-14.44.35208-h818238b_31.conda
+  sha256: af4b4b354b87a9a8d05b8064ff1ea0b47083274f7c30b4eb96bc2312c9b5f08f
+  md5: 603e41da40a765fd47995faa021da946
+  depends:
+  - ucrt >=10.0.20348.0
+  - vcomp14 14.44.35208 h818238b_31
+  constrains:
+  - vs2015_runtime 14.44.35208.* *_31
+  license: LicenseRef-MicrosoftVisualCpp2015-2022Runtime
+  license_family: Proprietary
+  size: 682424
+  timestamp: 1753739239305
+- conda: https://prefix.dev/conda-forge/win-64/vcomp14-14.44.35208-h818238b_31.conda
+  sha256: 67b317b64f47635415776718d25170a9a6f9a1218c0f5a6202bfd687e07b6ea4
+  md5: a6b1d5c1fc3cb89f88f7179ee6a9afe3
+  depends:
+  - ucrt >=10.0.20348.0
+  constrains:
+  - vs2015_runtime 14.44.35208.* *_31
+  license: LicenseRef-MicrosoftVisualCpp2015-2022Runtime
+  license_family: Proprietary
+  size: 113963
+  timestamp: 1753739198723
