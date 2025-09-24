@@ -11,7 +11,6 @@ test = "cp -r examples test-examples && cd test-examples/ch4 && bash run_pac99.s
 
 [package]
 name = "pac99"
-version = "1.6.0"
 
 [package.build]
 backend = { name = "pixi-build-rattler-build", version = "0.3.*" }
