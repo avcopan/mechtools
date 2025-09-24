@@ -10,6 +10,7 @@ build-pac99 = "cd PAC99 && pixi build"
 build-thermp = "cd ThermP && pixi build"
 build-projrot = "cd ProjRot && pixi build"
 build = { depends-on = ["build-pac99", "build-thermp", "build-projrot"] }
+upload = "pixi run rattler-build upload anaconda -o avcopan */*.conda"
 
 [dependencies]
 rattler-build = ">=0.47.0,<0.48"
