@@ -11,7 +11,7 @@ test = "cp -r examples test-examples && cd test-examples/ch2oc6h4ch3 && projrot"
 
 [package]
 name = "projrot"
-version = "0.1.0"
+version = "1.8.0"
 
 [package.build]
 backend = { name = "pixi-build-rattler-build", version = "0.3.*" }
