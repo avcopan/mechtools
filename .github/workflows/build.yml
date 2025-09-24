@@ -21,3 +21,10 @@ jobs:
       - name: Build
         run: |
           pixi run build
+
+      # Upload
+      - name: Upload
+        run: |
+          pixi run upload
+        env:
+          ANACONDA_API_KEY: ${{ secrets.ANACONDA_API_KEY }}
