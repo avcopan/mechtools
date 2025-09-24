@@ -1,0 +1,14 @@
+[workspace]
+authors = ["avcopan <avcopan@gmail.com>"]
+channels = ["conda-forge"]
+name = "mechtools"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+build-pac99 = "cd PAC99 && pixi build"
+build-thermp = "cd ThermP && pixi build"
+build-projrot = "cd ProjRot && pixi build"
+build = { depends-on = ["build-pac99", "build-thermp", "build-projrot"] }
+
+[dependencies]

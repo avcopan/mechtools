@@ -40,10 +40,10 @@
 # debug information files
 *.dwo
 
-test-examples/
-
 # pixi environments
 .pixi/
 !.pixi/config.toml
+
+# Other
 test-examples/
 *.conda
