@@ -12,3 +12,4 @@ build-projrot = "cd ProjRot && pixi build"
 build = { depends-on = ["build-pac99", "build-thermp", "build-projrot"] }
 
 [dependencies]
+rattler-build = ">=0.47.0,<0.48"
