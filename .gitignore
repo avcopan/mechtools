@@ -41,3 +41,9 @@
 *.dwo
 
 test-examples/
+
+# pixi environments
+.pixi/
+!.pixi/config.toml
+test-examples/
+*.conda
