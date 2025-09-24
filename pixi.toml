@@ -11,7 +11,11 @@ build-thermp = "cd ThermP && pixi build"
 build-projrot = "cd ProjRot && pixi build"
 build-slatec = "cd SLATEC && pixi build"
 build = { depends-on = ["build-pac99", "build-thermp", "build-projrot", "build-slatec"] }
-upload = "pixi run rattler-build upload anaconda -o Auto-Mech */*.conda"
+upload-pac99 = "pixi run rattler-build upload anaconda -o Auto-Mech PAC99/*.conda || true"
+upload-thermp = "pixi run rattler-build upload anaconda -o Auto-Mech ThermP/*.conda || true"
+upload-projrot = "pixi run rattler-build upload anaconda -o Auto-Mech ProjRot/*.conda || true"
+upload-slatec = "pixi run rattler-build upload anaconda -o Auto-Mech SLATEC/*.conda || true"
+upload = { depends-on = ["upload-pac99", "upload-thermp", "upload-projrot", "upload-slatec"] }
 
 [dependencies]
 rattler-build = ">=0.47.0,<0.48"
